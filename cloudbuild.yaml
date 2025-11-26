@@ -27,4 +27,4 @@ substitutions:
   _AR_HOSTNAME: 'us-central1-docker.pkg.dev' # Change to actual Artifact Registry location
   _AR_REPO: 'my-repository-1'
   _SERVICE_NAME: 'cloudrun-service'
-  _DEPLOY_REGION: 'us-central1'
+  _DEPLOY_REGION: 'us-central1' 
