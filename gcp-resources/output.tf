@@ -1,23 +1,15 @@
-output "frontend_url" {
-  value = google_cloud_run_service.frontend.status[0].url
+output "service_uri" {
+  value = google_cloud_run_v2_service.sample-service.uri
 }
 
-output "backend_url" {
-  value = google_cloud_run_service.backend.status[0].url
+output "service_status" {
+  value = google_cloud_run_v2_service.sample-service.conditions
 }
 
-output "backend_service_name" {
-  value = google_cloud_run_service.backend.name
+output "artifact_registry_repo" {
+  value = google_artifact_registry_repository.my-repo.name
 }
 
-output "frontend_service_name" {
-  value = google_cloud_run_service.frontend.name
-}
-
-output "artifact_registry_backend_repo" {
-  value = google_artifact_registry_repository.backend_repo.repository_id
-}
-
-output "artifact_registry_frontend_repo" {
-  value = google_artifact_registry_repository.frontend_repo.repository_id
+output "artifact_registry_registry_uri" {
+  value = google_artifact_registry_repository.my-repo.registry_uri
 }
