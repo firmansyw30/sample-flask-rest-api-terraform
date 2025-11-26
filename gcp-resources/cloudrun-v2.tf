@@ -10,11 +10,11 @@ resource "google_cloud_run_v2_service" "sample-service" {
   ingress = "INGRESS_TRAFFIC_ALL"
 
   scaling {
-    max_instance_count = 100
+    max_instance_count = 10
   }
 
-  template {
-    containers {
+  template { # Cloud Run service template
+    containers { # Using placeholder image for Cloud Run service (initial)
       image = "us-docker.pkg.dev/cloudrun/container/hello"
     }
   }
