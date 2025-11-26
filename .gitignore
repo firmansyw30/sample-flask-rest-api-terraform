@@ -1,1 +1,6 @@
 gcp-resources/*.json
+gcp-resources/*.tfstate
+gcp-resources/*.tfstate.backup
+.terraform/
+.terraform.lock.hcl
+gcp-resources/.terraform/
