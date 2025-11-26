@@ -1,9 +1,15 @@
+import os
 from flask import Flask, jsonify, request
 import uuid
 
 app = Flask(__name__)
 
 books = []  # In-memory storage for books
+
+if __name__ == "__main__":
+    app.run(debug=True) # Run the Flask app in debug mode
+    port = int(os.environ.get("PORT", 8080)) 
+    app.run(debug=True, host='0.0.0.0', port=port) # Note host 0.0.0.0
 
 @app.route('/', methods=['GET'])
 def home():
@@ -52,9 +58,6 @@ def delete_book(id):
     global books
     books = [book for book in books if book["id"] != id]
     return jsonify({"message": "Book deleted"})
-
-if __name__ == "__main__":
-    app.run(debug=True) # Run the Flask app in debug mode
 
 @app.errorhandler(404)
 def not_found(error):
